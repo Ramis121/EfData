@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Domain.Model.User>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<a asp-action="Create" asp-controller="Home">Добавить пользователя</a>
+<form asp-controller="Home" asp-action="Index">
+    <table class="table">
+        @foreach (var item in Model) 
+        {
+            <tr>
+                <td>@item.name</td>
+                <td>
+                    <a asp-action="Deteils" asp-route-id="@item.id">Подробнее</a>
+                    <a asp-action="Edit" asp-route-id="@item.id">Редактировать</a>
+                    <a asp-action="Delete" asp-route-id="@item.id">Удалить</a>
+                </td>
+            </tr>
+        }
+    </table>
+</form>
+

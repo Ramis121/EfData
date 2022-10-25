@@ -1,0 +1,22 @@
+﻿@model Domain.Model.User
+<div>
+    <dl>
+        <dt>Имя</dt>
+        <dd>
+            @Html.DisplayFor(model => model.name);
+        </dd>
+
+        <dt>Возраст</dt>
+        <dd>
+            @Html.DisplayFor(model => model.age);
+        </dd>
+    </dl>
+
+    <div>
+        <form asp-controller="Home" asp-action="Delete" method="post">
+            <div class="form-group">
+                <input type="submit" class="btn btn-default" value="Удаление пользователя"/>
+            </div>
+        </form>
+    </div>
+</div>
